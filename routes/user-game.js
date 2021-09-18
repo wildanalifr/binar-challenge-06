@@ -19,10 +19,12 @@ router.get('/create', async (req, res) => {
   res.render('Admin/User/create-user', {
     layout: 'Layouts/Admin/main-layout',
     title: 'User-Game',
+    errors: '',
+    message: '',
   })
 })
 
-// GET Detail ID
+// Halaman Detail ID
 router.get('/edit/:id', async (req, res) => {
   const userGame = await user_game.findOne({ where: { id: req.params.id } })
   res.render('Admin/User/edit-user', {
@@ -52,18 +54,22 @@ router.post('/edits', async (req, res) => {
     })
 })
 
-// CREATE new user
+// FUNCTION CREATE NEW USER
 router.post(
   '/',
   body('username').notEmpty().withMessage('username tidak boleh kosong'),
   body('email').isEmail().withMessage('tidak sesuai format email'),
   body('password').notEmpty().withMessage('password tidak boleh kosong').isLength({ min: 8 }).withMessage('minimal 8 karakter'),
-  // if(req.body.username == null || req.body.username == "" || req.body.username == undefined)
   async (req, res) => {
-    // Finds the validation errors in this request and wraps them in an object with handy functions
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() })
+      res.render('Admin/User/edit-user', {
+        layout: 'Layouts/Admin/main-layout',
+        title: 'User-Game',
+        userGame,
+        errors: errors.array(),
+        message: '',
+      })
     }
 
     const data = await user_game.findOne({
@@ -71,17 +77,15 @@ router.post(
     })
 
     if (data) {
-      return res.status(400).json({ message: 'username sudah ada' })
-    }
+      // res.redirect('/create', { errors: '', message: 'username sudah ada' })
 
-    // logika random
-    // username + random angka
-
-    // random 3 data
-    let suggestRandom = []
-    for (let i = 0; i < 3; i++) {
-      let randomAngka = Math.floor(Math.random() * 3)
-      suggestRandom.push(req.body.username + randomAngka.toString())
+      res.render('Admin/User/edit-user', {
+        layout: 'Layouts/Admin/main-layout',
+        title: 'User-Game',
+        userGame,
+        errors: '',
+        message: 'username sudah ada',
+      })
     }
 
     // hashing password
@@ -93,10 +97,18 @@ router.post(
           username: req.body.username,
           password: hash,
           email: req.body.email,
-          generate_random: suggestRandom[0],
         })
         .then((result) => {
-          res.redirect('/user-gamer')
+          user_game_biodata.create({
+            nama: req.body.nama,
+            alamat: req.body.alamat,
+            umur: req.body.umur,
+            nomor_telfon: req.body.nomor_telfon,
+            id_user_game: result.id,
+          })
+          message = 'berhasil menambahkan data'
+          return res.status(201).json({ code: 201, message: message })
+          // res.redirect('/user-gamer')
         })
     })
   }
@@ -110,7 +122,6 @@ router.delete('/:id', async (req, res) => {
 })
 
 // test
-
 router.get('/test', async (req, res) => {
   const getUserGame = await user_game.findAll()
   if (getUserGame) {

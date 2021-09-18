@@ -11,29 +11,60 @@
                 <p class="mt-1 text-sm text-gray-600">
                   Silahkan masukkan data user baru
                 </p>
+
+                <% if (message) { %>
+                  <p>error</p>
+                  <% } else if {%>
+                    <p>jfjf</p>
+                    <% } else {%>
+                      <% }%>
+
               </div>
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
-              <form action="/user-gamer" method="POST">
+              <form action="/user-game" method="POST">
                 <div class="shadow overflow-hidden sm:rounded-md">
                   <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
-                      <div class="col-span-6">
+                      <div class="col-span-6 md:col-span-3">
                         <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
                         <input type="text" name="username" id="username" autocomplete="given-name"
                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                       </div>
 
-                      <div class="col-span-6">
+                      <div class="col-span-6 md:col-span-3">
                         <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                        <input type="text" name="password" id="password" autocomplete="family-name"
+                        <input type="password" name="password" id="password" autocomplete="family-name"
                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                       </div>
 
-                      <div class="col-span-6">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email
-                          address</label>
+                      <div class="col-span-6 md:col-span-3">
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                         <input type="text" name="email" id="email" autocomplete="email"
+                          class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                      </div>
+
+                      <div class="col-span-6 md:col-span-3">
+                        <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                        <input type="text" name="nama" id="nama" autocomplete="nama"
+                          class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                      </div>
+
+                      <div class="col-span-6 md:col-span-3">
+                        <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
+                        <input type="text" name="alamat" id="alamat" autocomplete="alamat"
+                          class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                      </div>
+
+                      <div class="col-span-6 md:col-span-3">
+                        <label for="umur" class="block text-sm font-medium text-gray-700">Umur</label>
+                        <input type="text" name="umur" id="umur" autocomplete="umur"
+                          class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                      </div>
+
+                      <div class="col-span-6 md:col-span-3">
+                        <label for="nomor_telfon" class="block text-sm font-medium text-gray-700">Nomor Telfon</label>
+                        <input type="text" name="nomor_telfon" id="nomor_telfon" autocomplete="nomor_telfon"
                           class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                       </div>
                     </div>
