@@ -1,0 +1,32 @@
+{
+  "name": "challenge-06",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "tailwind:css": "tailwindcss -o ./public/stylesheets/style.css -w",
+    "concat-css": "cat css/* > ./public/output/all.css",
+    "dev": "concurrently --kill-others \"npm run tailwind:css\" \"npm run start\""
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "bcrypt": "^5.0.1",
+    "concurrently": "^6.2.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-validator": "^6.12.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5",
+    "tailwindcss": "^2.2.15"
+  },
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

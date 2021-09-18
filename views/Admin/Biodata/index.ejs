@@ -1,0 +1,78 @@
+<main class="flex-1 relative overflow-y-auto focus:outline-none">
+    <div class="py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex justify-between">
+            <h1 class="text-2xl font-semibold text-gray-900">List User</h1>
+            <a href="/user-gamer/create"
+                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Tambah User
+            </a>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            <!-- Replace with your content -->
+            <div class="py-4">
+                <!-- This example requires Tailwind CSS v2.0+ -->
+                <div class="flex flex-col">
+                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                No
+                                            </th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Name
+                                            </th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Email
+                                            </th>
+                                            <th scope="col"
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Odd row -->
+                                        <% let i=0 %>
+                                            <% getUserGame.forEach((user)=> { %>
+                                                <!-- <tr class="bg-white"> -->
+                                                <tr class=" <%= i%2==0 ? 'bg-white' : 'bg-gray-50'  %>   ">
+                                                    <td
+                                                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                        <%= i+1 %>
+                                                    </td>
+                                                    <td
+                                                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                        <%= user.username %>
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                        <%= user.email %>
+                                                    </td>
+                                                    <td
+                                                        class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium flex items-center gap-x-2">
+                                                        <a href="/user-gamer/edit/<%=user.id%>"
+                                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                        <div>|</div>
+                                                        <a href="/user-gamer/<%=user.id%>/delete"
+                                                            class="text-indigo-600 hover:text-indigo-900">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <% i++ %>
+                                                    <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /End replace -->
+        </div>
+    </div>
+</main>
