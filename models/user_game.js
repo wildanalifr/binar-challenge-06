@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'id_user_game',
         as: 'user_biodata',
       })
+      user_game.hasMany(models.user_game_history, {
+        foreignKey: 'id_user_game',
+        as: 'user_history',
+      })
     }
   }
   user_game.init(

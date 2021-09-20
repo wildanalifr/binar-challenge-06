@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+
+    <div class="h-screen flex overflow-hidden bg-gray-100">
+
+        <!-- Static sidebar for desktop -->
+        <div class="hidden bg-indigo-700 md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64">
+                <!-- Sidebar component, swap this element with another sidebar if you like -->
+                <div class="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
+                    <div class="flex items-center flex-shrink-0 px-4">
+                        <img class="h-8 w-auto"
+                            src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
+                            alt="Workflow">
+                    </div>
+                    <div class="mt-5 flex-1 flex flex-col">
+                        <nav class="flex-1 px-2 space-y-1">
+                            <!-- Current: "bg-indigo-800 text-white", Default: "text-indigo-100 hover:bg-indigo-600" -->
+                            <a href="/admin"
+                                class="bg-indigo-800 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <!-- Heroicon name: outline/users -->
+                                <svg class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+
+                                Manajemen User
+                            </a>
+
+                            <a href="/"
+                                class="text-indigo-100 hover:bg-indigo-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                                <!-- Heroicon name: outline/home -->
+                                <svg class="mr-3 flex-shrink-0 h-6 w-6 text-indigo-300"
+                                    xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg>
+                                Log Out
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col w-0 flex-1 overflow-hidden">
+            <div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+                <button type="button"
+                    class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden">
+                    <span class="sr-only">Open sidebar</span>
+                    <!-- Heroicon name: outline/menu-alt-2 -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <main class="flex-1 relative overflow-y-auto focus:outline-none">
+                <div class="py-6">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                        <!-- Replace with your content -->
+                        <div class="py-4">
+                            <div class="mt-10 sm:mt-0">
+                                <div class="md:grid md:grid-cols-3 md:gap-6">
+                                    <div class="md:col-span-1">
+                                        <div class="px-4 sm:px-0">
+                                            <h3 class="text-lg font-semibold leading-6 text-gray-900">Edit User
+                                            </h3>
+                                            <p class="mt-1 text-sm text-gray-600">
+                                                Silahkan masukkan data user baru
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5 md:mt-0 md:col-span-2">
+                                        <form action="/admin/edits" method="POST">
+                                            <div class="shadow overflow-hidden sm:rounded-md">
+                                                <div class="px-4 py-5 bg-white sm:p-6">
+                                                    <div class="grid grid-cols-6 gap-6">
+
+                                                        <div class="col-span-6 md:col-span-3">
+                                                            <label for="nama"
+                                                                class="block text-sm font-medium text-gray-700">Username</label>
+                                                            <input type="text" name="username" id="username"
+                                                                autocomplete="username" class=" mt-1 focus:ring-indigo-500 focus:border-indigo-500 block
+                                                                w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                value="<%=userBiodata.user_biodata.username%>">
+                                                            <input type="hidden" name="id_user_game"
+                                                                value="<%=userBiodata.id_user_game%>">
+                                                        </div>
+
+                                                        <div class="col-span-6 md:col-span-3">
+                                                            <label for="email"
+                                                                class="block text-sm font-medium text-gray-700">Email
+                                                                address</label>
+                                                            <input type="text" name="email" id="email"
+                                                                autocomplete="email"
+                                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                value="<%=userBiodata.user_biodata.email%>">
+                                                        </div>
+
+                                                        <div class="col-span-6 md:col-span-3">
+                                                            <label for="nama"
+                                                                class="block text-sm font-medium text-gray-700">Nama
+                                                                Lengkap</label>
+                                                            <input type="text" name="nama" id="nama"
+                                                                autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500
+                                                            block w-full shadow-sm sm:text-sm border-gray-300
+                                                            rounded-md" value="<%=userBiodata.nama%>">
+                                                        </div>
+
+                                                        <div class=" col-span-6 md:col-span-3">
+                                                            <label for="alamat"
+                                                                class="block text-sm font-medium text-gray-700">Alamat</label>
+                                                            <input type="text" name="alamat" id="alamat"
+                                                                autocomplete="alamat"
+                                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                value="<%=userBiodata.alamat%>">
+                                                        </div>
+
+                                                        <div class="col-span-6 md:col-span-3">
+                                                            <label for="umur"
+                                                                class="block text-sm font-medium text-gray-700">Umur</label>
+                                                            <input type="text" name="umur" id="umur" autocomplete="umur"
+                                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                value="<%=userBiodata.umur%>">
+                                                        </div>
+
+                                                        <div class="col-span-6 md:col-span-3">
+                                                            <label for="nomor_telfon"
+                                                                class="block text-sm font-medium text-gray-700">Nomor
+                                                                Telfon</label>
+                                                            <input type="text" name="nomor_telfon" id="nomor_telfon"
+                                                                autocomplete="nomor_telfon"
+                                                                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                                value="<%=userBiodata.nomor_telfon%>">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                                    <button type="submit"
+                                                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                        Edit User
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /End replace -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>

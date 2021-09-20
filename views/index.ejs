@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="stylesheets/chapter-03.css" />
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <div class="intro">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/register">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="section-intro">
+            <div class="container">
+                <div class="main-intro d-flex flex-column justify-content-center align-items-center">
+                    <h1>Play Traditional Game</h1>
+                    <h3>Experience new traditional game play</h3>
+                    <a href="/login" type="button" class="btn btn-warning text-uppercase">play now</a>
+                    <a href="#games" class="btn-last">
+                        <h4 class="text-uppercase">The story</h4>
+                        <div>
+                            <img src="/assets/chapter-03/svg/scroll-down.svg" alt="" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: SECTION INTRO -->
+
+    <!-- START: SECTION GAMES -->
+    <div class="games" id="games">
+        <div class="container">
+            <div class="main-games d-flex justify-content-center align-items-start row">
+                <div class="col-12 col-sm-4 games-left">
+                    <h3>What's so special</h3>
+                    <h1 class="text-uppercase">the games</h1>
+                </div>
+                <div class="col-12 col-sm-8 games-right">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                                aria-label="Slide 5"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/assets/chapter-03/images/rockpaperstrategy-1600.jpg" class="d-block w-100"
+                                    alt="..." />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/chapter-03/images/rockpaperstrategy-1600.jpg" class="d-block w-100"
+                                    alt="..." />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/chapter-03/images/rockpaperstrategy-1600.jpg" class="d-block w-100"
+                                    alt="..." />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/chapter-03/images/rockpaperstrategy-1600.jpg" class="d-block w-100"
+                                    alt="..." />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/chapter-03/images/rockpaperstrategy-1600.jpg" class="d-block w-100"
+                                    alt="..." />
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="" aria-hidden="true">
+                                <img src="/assets/chapter-03/svg/btn-left.svg" alt="" />
+                            </span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="" aria-hidden="true">
+                                <img src="/assets/chapter-03/svg/btn-right.svg" alt="" />
+                            </span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: SECTION GAMES -->
+
+    <!-- START: SECTION FEATURES -->
+    <div class="features" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-12 col-md-6 main-features">
+                    <div class="features_heading">
+                        <h1>What's so special?</h1>
+                        <h3 class="text-uppercase">features</h3>
+                    </div>
+                    <ul class="features_menu">
+                        <li class="detail">
+                            <div class="info">
+                                <h3 class="text-uppercase">traditional game</h3>
+                                <p>
+                                    If you miss your childhood, we provide <br />
+                                    many traditional games here
+                                </p>
+                            </div>
+                        </li>
+                        <li class="detail">
+                            <div class="info">
+                                <h3 class="text-uppercase">game suit</h3>
+                            </div>
+                        </li>
+                        <li class="detail">
+                            <div class="info">
+                                <h3 class="text-uppercase">tbd</h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: SECTION FEATURES -->
+
+    <!-- START: SECTION SYSTEM REQUIREMENTS -->
+    <div class="requirements" id="requirements">
+        <div class="container">
+            <div class="row">
+                <div class="requirements-header">
+                    <h3 class="text-capitalize text-center">can my computer run this game?</h3>
+                    <h1 class="text-capitalize">
+                        System <br />
+                        requirements
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="requirements-table">
+                        <table>
+                            <tr>
+                                <td>
+                                    <h3>os:</h3>
+                                    <p>Windows 7 64-bit only (No OSX support at this time)</p>
+                                </td>
+                                <td>
+                                    <h3>processor:</h3>
+                                    <p>Intel Core 2 Duo @ 2.4 GHZ or AMD Athlon X2 @ 2.8 GHZ</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h3>memory:</h3>
+                                    <p>4 GB RAM</p>
+                                </td>
+                                <td>
+                                    <h3>storage:</h3>
+                                    <p>8 GB available space</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <h3>graphics:</h3>
+                                    <p>NVIDIA GeForce GTX 660 2GB or AMD Radeon HD 7850 2GB DirectX11 (Shader Model 5)
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: SECTION SYSTEM REQUIREMENTS -->
+
+    <!-- START: SECTION TOP SCORES -->
+    <div class="top-scores">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-between">
+                <div class="col-12 col-lg-6 top-scores-info">
+                    <h1>top scores</h1>
+                    <p>
+                        This top score from various games provided <br />
+                        on this platform
+                    </p>
+                    <button type="button" class="btn btn-warning">see more</button>
+                </div>
+                <div class="col-12 col-lg-6 d-flex flex-column align-items-end cards">
+                    <div class="card">
+                        <div class="card-top d-flex">
+                            <div class="card__image">
+                                <img src="/assets/chapter-03/images/evan-lahti.jpg" alt="evan-lahti" />
+                            </div>
+                            <div class="card__bio">
+                                <h3>Evan Lahti</h3>
+                                <p>PC Gamer</p>
+                            </div>
+                            <div class="card__twitter">
+                                <img src="/assets/chapter-03/svg/twitter.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>“One of my gaming highlights of the year.”</h3>
+                            <p>October 18, 2018</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-top d-flex">
+                            <div class="card__image">
+                                <img src="/assets/chapter-03/images/jada-griffin.jpg" alt="jada-griffin" />
+                            </div>
+                            <div class="card__bio">
+                                <h3>Jada Griffin</h3>
+                                <p>Nerdreactor</p>
+                            </div>
+                            <div class="card__twitter">
+                                <img src="/assets/chapter-03/svg/twitter.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>“The next big thing in the world of streaming and survival games.”</h3>
+                            <p>December 21, 2018</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-top d-flex">
+                            <div class="card__image">
+                                <img src="/assets/chapter-03/images/aaron-williams.jpg" alt="aaron-williams" />
+                            </div>
+                            <div class="card__bio">
+                                <h3>Aaron Williams</h3>
+                                <p>uproxx</p>
+                            </div>
+                            <div class="card__twitter">
+                                <img src="/assets/chapter-03/svg/twitter.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3>“Snoop Dogg Playing The Wildly Entertaining ‘SOS’ Is Ridiculous.”</h3>
+                            <p>December 24, 2018</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: SECTION TOP SCORES -->
+
+    <!-- START: SECTION NEWSLETTER -->
+    <section class="newsletter pb-3" id="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <img src="/assets/chapter-03/images/skull.png" alt="" />
+                </div>
+                <div class="newsletter-text col-12 col-md-7">
+                    <h3>
+                        Want to stay in <br />
+                        touch?
+                    </h3>
+                    <h1>
+                        newsletter <br />
+                        subscribe
+                    </h1>
+                    <p>In order to start receiving our news, all you have to do is enter your email address. Everything
+                        else will be taken care of by us. We will send you emails containing information about game. We
+                        don’t spam.</p>
+                    <div class="newsletter-form">
+                        <div class="newsletter-input">
+                            <h6>Your email address</h6>
+                            <input type="text" />
+                        </div>
+                        <button type="button" class="btn btn-warning">Subscribe now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- START: SECTION NEWSLETTER -->
+
+    <!-- START: FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-menu">
+                    <ul class="footer-menu__nav">
+                        <li>
+                            <a href="#">main</a>
+                        </li>
+                        <li>
+                            <a href="#">about</a>
+                        </li>
+                        <li>
+                            <a href="#">game features</a>
+                        </li>
+                        <li>
+                            <a href="#">system requirements</a>
+                        </li>
+                        <li>
+                            <a href="#">quotes</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-menu__sosmed">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitch"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <hr />
+                <div class="footer-info">
+                    <div>
+                        <h3>&copy; 2018 Your Games, Inc. All Rights Reserved</h3>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Services</a></li>
+                            <li><a href="#">Code of Conduct</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END: FOOTER -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="javascript/oop.js"></script>
+</body>
+
+</html>
